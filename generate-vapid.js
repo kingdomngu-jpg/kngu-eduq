@@ -1,4 +1,4 @@
-const webpush = require('web-push');
+import webpush from 'web-push';
 
 try {
   console.log('Génération des clés VAPID en cours...');
