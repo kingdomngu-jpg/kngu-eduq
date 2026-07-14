@@ -7,6 +7,9 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABAS
 
 console.log('[Supabase] URL:', supabaseUrl ? '✓ Configurée' : '❌ MANQUANTE');
 console.log('[Supabase] URL Value (debug):', JSON.stringify(supabaseUrl));
+if (supabaseUrl) {
+  console.log('[Supabase] URL Char Codes:', Array.from(supabaseUrl).map(c => c.charCodeAt(0)));
+}
 console.log('[Supabase] Clé Backend:', process.env.SUPABASE_SERVICE_ROLE_KEY ? '✓ SERVICE_ROLE (RLS Bypass)' : '⚠️ ANON_KEY (Sujet à RLS)');
 
 if (!supabaseUrl || !supabaseKey) {
