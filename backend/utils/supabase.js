@@ -10,6 +10,11 @@ console.log('[Supabase] URL Value (debug):', JSON.stringify(supabaseUrl));
 if (supabaseUrl) {
   console.log('[Supabase] URL Char Codes:', Array.from(supabaseUrl).map(c => c.charCodeAt(0)));
 }
+if (supabaseKey) {
+  console.log('[Supabase] Key length:', supabaseKey.length);
+  console.log('[Supabase] Key start:', JSON.stringify(supabaseKey.substring(0, 5)));
+  console.log('[Supabase] Key end:', JSON.stringify(supabaseKey.substring(supabaseKey.length - 5)));
+}
 console.log('[Supabase] Clé Backend:', process.env.SUPABASE_SERVICE_ROLE_KEY ? '✓ SERVICE_ROLE (RLS Bypass)' : '⚠️ ANON_KEY (Sujet à RLS)');
 
 if (!supabaseUrl || !supabaseKey) {
