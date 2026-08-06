@@ -426,7 +426,7 @@ export const Login: React.FC = () => {
                       </div>
                     ) : (
                       <div className="text-left w-full mt-2 space-y-1.5 px-1 border-t border-slate-100 pt-2">
-                        <p className="text-[10px] font-bold text-slate-700">Confidentialité & Données (loi togolaise / IPDCP)</p>
+                        <p className="text-[10px] font-bold text-slate-700">Confidentialité & Données (loi béninoise / APDP)</p>
                         
                         <label className="flex items-start gap-2 cursor-pointer">
                           <input type="checkbox" checked={acceptedTerms} onChange={(e) => setAcceptedTerms(e.target.checked)} className="mt-0.5 accent-amber-500 rounded scale-90" required />

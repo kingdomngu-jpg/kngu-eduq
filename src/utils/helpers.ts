@@ -52,12 +52,12 @@ export const formatMontant = (montant: number): string => {
   return new Intl.NumberFormat('fr-FR').format(montant) + ' FCFA';
 };
 
-export const formatPhoneTogo = (phone: string): string => {
+export const formatPhoneBenin = (phone: string): string => {
   const cleaned = (phone || '').replace(/\D/g, '');
-  if (cleaned.startsWith('228')) {
+  if (cleaned.startsWith('229')) {
     return '+' + cleaned;
   }
-  return '+228' + cleaned;
+  return '+229' + cleaned;
 };
 
 export const calculateDashboardStats = (students: Student[]): DashboardStats => {
@@ -108,7 +108,7 @@ export const calculateClassStats = (students: Student[]): ClassStats[] => {
 };
 
 export const generateWhatsAppLink = (phone: string, message: string): string => {
-  const formattedPhone = formatPhoneTogo(phone).replace('+', '');
+  const formattedPhone = formatPhoneBenin(phone).replace('+', '');
   const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${formattedPhone}?text=${encodedMessage}`;
 };

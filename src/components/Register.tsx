@@ -112,7 +112,7 @@ export const Register: React.FC<RegisterProps> = ({ onBack, onSuccess }) => {
                 </div>
 
                 <div className="text-left w-full mt-4 space-y-2 border-t border-white/10 pt-3">
-                    <p className="text-xs font-bold text-blue-200">Confidentialité & Protection des données (loi togolaise / IPDCP)</p>
+                    <p className="text-xs font-bold text-blue-200">Confidentialité & Protection des données (loi béninoise / APDP)</p>
                     
                     <label className="flex items-start gap-2 cursor-pointer">
                         <input type="checkbox" checked={acceptedTerms} onChange={(e) => setAcceptedTerms(e.target.checked)} className="mt-1 accent-blue-500 rounded" required />

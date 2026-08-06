@@ -1,7 +1,7 @@
 import React from 'react';
 import { BulletinEleveResultat } from '../../utils/bulletinCalculations';
 
-interface BulletinTogoPDFProps {
+interface BulletinBeninPDFProps {
     data: BulletinEleveResultat;
     schoolName: string;
     schoolLogo: string | null;
@@ -17,7 +17,7 @@ const getDateFr = (): string => {
     return `${d.getDate()} ${mois[d.getMonth()]} ${d.getFullYear()}`;
 };
 
-export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFProps>(
+export const BulletinBeninPDF = React.forwardRef<HTMLDivElement, BulletinBeninPDFProps>(
     ({ data, schoolName, schoolLogo, schoolStamp, schoolYear, studentPhoto }, ref) => {
     return (
         <div
@@ -39,7 +39,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
             )}
 
             <div className="flex-1 flex flex-col">
-                {/* ───────────────────────────── EN-TÊTE SANS CADRES (4 COLONNES : SCEAU | MINISTÈRE | ÉCOLE | LOGO) ───────────────────────────── */}
+                {/* ───────────────────────────── EN-TÊTE SANS CADRES (4 COLONNES) ───────────────────────────── */}
                 <div className="mb-2">
                     <div className="flex justify-between items-start py-1 gap-2 border-b border-black pb-2">
 
@@ -58,16 +58,17 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                             )}
                         </div>
 
-                        {/* CONTENEUR CENTRAL SATURÉ */}
+                        {/* CONTENEUR CENTRAL */}
                         <div className="flex-1 flex justify-center gap-8 items-start px-2">
                              {/* 2. BLOC MINISTÈRE (Centre-Gauche) */}
-                            <div className="flex-1 flex flex-col items-center text-center space-y-1.5">
-                                <p className="font-bold uppercase text-[11px] tracking-widest leading-none">République Togolaise</p>
-                                <p className="italic text-[9px] leading-none">Travail – Liberté – Patrie</p>
-                                <div className="w-12 border-t border-black my-1"></div>
-                                <p className="font-black uppercase text-[11.5px] leading-tight">Ministère de l'Éducation Nationale</p>
-                                <p className="font-bold uppercase text-[10px] leading-tight">Direction Régionale de l'Éducation</p>
-                                <p className="font-bold uppercase text-[10px] leading-tight">Inspection de l'Enseignement Général</p>
+                            <div className="flex-1 flex flex-col items-center text-center space-y-1">
+                                <p className="font-bold uppercase text-[11px] tracking-widest leading-none">République du Bénin</p>
+                                <p className="italic text-[9px] leading-none">Fraternité – Justice – Travail</p>
+                                <div className="w-12 border-t border-black my-0.5"></div>
+                                <p className="font-black uppercase text-[10px] leading-tight">Ministère des Enseignements Secondaire, Technique</p>
+                                <p className="font-black uppercase text-[10px] leading-tight">et de la Formation Professionnelle</p>
+                                <p className="font-bold uppercase text-[9px] leading-tight">Direction Départementale de l'Éducation</p>
+                                <p className="font-bold uppercase text-[9px] leading-tight">Inspection de l'Enseignement</p>
                             </div>
 
                             {/* 3. BLOC ÉTABLISSEMENT (Centre-Droite) */}
@@ -77,8 +78,8 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                                 </h2>
                                 <p className="italic font-black text-[11px] uppercase tracking-wider mb-0.5">Travail-Rigueur-succès</p>
                                 <div className="flex flex-col text-[10px] font-bold space-y-0.5">
-                                    <p>Tél: +228 90 17 79 66 / 99 41 40 47</p>
-                                    <p>BP: 80159 Apéssito - TOGO</p>
+                                    <p>Tél: +229 XX XX XX XX</p>
+                                    <p>BP: Cotonou - BÉNIN</p>
                                 </div>
                             </div>
                         </div>
@@ -101,12 +102,11 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                     </div>
                 </div>
 
-                {/* ──────────────── IDENTIFICATION ÉLÈVE (avec photo passeport) ──────────────── */}
+                {/* ──────────────── IDENTIFICATION ÉLÈVE ──────────────── */}
                 <div
                     className="border-[1.5px] border-black mb-1"
                     style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 0 }}
                 >
-                    {/* Infos élève — lignes séparées par des bordures */}
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
 
                         {/* Ligne 1 : Nom & Prénom  |  Matricule */}
@@ -145,7 +145,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                             </div>
                         </div>
 
-                        {/* Ligne 4 : TITRE BULLETIN — occupe l'espace vide en face de la photo */}
+                        {/* Ligne 4 : TITRE BULLETIN */}
                         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8f8f8', borderTop: 'none' }}>
                             <div className="text-center py-1.5 px-3">
                                 <p className="font-black uppercase tracking-widest text-[16px] leading-tight text-black">
@@ -156,7 +156,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                         </div>
                     </div>
 
-                    {/* CADRE PHOTO PASSEPORT — agrandi */}
+                    {/* CADRE PHOTO PASSEPORT */}
                     <div
                         className="border-l-[1.5px] border-black flex-shrink-0 relative bg-[#f8f8f8]"
                         style={{ width: '35mm', minHeight: '35mm' }}
@@ -232,7 +232,6 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                                         <td className="border-[1.5px] border-black p-0.5 font-bold text-[11px]">{l.coef}</td>
                                         <td className="border-[1.5px] border-black p-0.5 font-bold text-[12px] bg-gray-50">{l.totalPoints !== null ? l.totalPoints : '-'}</td>
                                         <td className="border-[1.5px] border-black p-0.5 font-bold text-[11px]">{l.rangMatiere}</td>
-                                        {/* Colonne PROF : wrapping autorisé, taille réduite pour les longs noms */}
                                         <td
                                             className="border-[1.5px] border-black p-0.5 text-[9.5px] leading-tight"
                                             style={{ wordBreak: 'break-word', whiteSpace: 'normal', hyphens: 'auto' }}
@@ -267,12 +266,11 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                 {/* ═══════════════ RÉSULTATS + APPRÉCIATIONS ═══════════════ */}
                 <div className="border-[1.5px] border-black mt-1" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', minHeight: '30mm' }}>
 
-                    {/* COLONNE GAUCHE : Résultats et Statistiques */}
+                    {/* COLONNE GAUCHE */}
                     <div style={{ borderRight: '1.5px solid black', display: 'flex', flexDirection: 'column', flex: 1 }}>
 
-                        {/* 1. TABLEAU DES RÉSULTATS (HORIZONTAL 6 COLONNES - Demande USER) */}
+                        {/* TABLEAU DES RÉSULTATS */}
                         <div style={{ display: 'flex', flexDirection: 'column', borderBottom: '1.5px solid black' }}>
-                            {/* LIGNE 1 : EN-TÊTES (6 COLONNES) */}
                             <div style={{ 
                                 display: 'grid', 
                                 gridTemplateColumns: 'repeat(6, 1fr)', 
@@ -310,7 +308,6 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                                 })()}
                             </div>
 
-                            {/* LIGNE 2 : VALEURS (6 COLONNES) */}
                             <div style={{ 
                                 display: 'grid', 
                                 gridTemplateColumns: 'repeat(6, 1fr)', 
@@ -339,7 +336,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                                         );
                                         nodes.push(
                                             <div key={`${pName}-rang`} style={{ 
-                                                padding: '4px 2px', borderRight: idx === 2 && isTrim ? 'none' : (idx === 1 && !isTrim ? '1px solid black' : '1px solid black'), 
+                                                padding: '4px 2px', borderRight: idx === 2 && isTrim ? 'none' : '1px solid black', 
                                                 color: '#1e40af', background: isCurrent ? '#eff6ff' : 'transparent' 
                                             }}>
                                                 {detail ? detail.rang : '-'}
@@ -347,7 +344,6 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                                         );
                                     });
 
-                                    // Si semestre, ajouter Moyenne Annuelle pour remplir les 6 colonnes
                                     if (!isTrim) {
                                         nodes.push(
                                             <div key="moy-ann" style={{ padding: '4px 2px', borderRight: '1px solid black', color: '#4338ca', background: '#f5f3ff' }}>
@@ -366,7 +362,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                             </div>
                         </div>
 
-                        {/* 2. STATISTIQUES EXPLICITES DE LA CLASSE (Les informations importantes) */}
+                        {/* STATISTIQUES */}
                         <div className="p-2 flex-col justify-center space-y-2 flex-1 bg-[#f8f9fa]">
                             <div className="flex justify-between items-end border-b border-gray-200 pb-0.5">
                                 <span className="uppercase text-[11px] font-black text-black">Moyenne Générale :</span>
@@ -397,7 +393,7 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
                         </div>
                     </div>
 
-                    {/* COLONNE DROITE : Appréciation (Cases rondes) */}
+                    {/* COLONNE DROITE : Appréciation */}
                     <div style={{ width: '38mm', display: 'flex', flexDirection: 'column' }}>
                         <div className="text-[8px] font-black uppercase text-center" style={{ padding: '2px 4px', background: '#e5e5e5', borderBottom: '1.5px solid black' }}>
                             APPRÉCIATION
@@ -453,13 +449,11 @@ export const BulletinTogoPDF = React.forwardRef<HTMLDivElement, BulletinTogoPDFP
 
                 {/* ──────────── PIED DE PAGE ──────────── */}
                 <div className="mt-2 flex justify-between items-end">
-                    {/* Mention légale */}
                     <p className="text-[7.5px] italic text-gray-400 max-w-[55%]">
                         Ce bulletin est unique et aucune copie ne sera délivrée. À conserver précieusement par le parent ou tuteur.
                     </p>
-                    {/* Date de création — plus grande, en bas de page */}
                     <p className="text-[11px] font-bold text-black text-right">
-                        Fait à Apessito, le {getDateFr()}
+                        Fait à Cotonou, le {getDateFr()}
                     </p>
                 </div>
             </div>

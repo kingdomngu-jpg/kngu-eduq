@@ -31,8 +31,8 @@ const parseSexe = (val: unknown): 'M' | 'F' => {
 
 const formatPhone = (val: unknown): string => {
   if (!val) return '';
-  const str = String(val).replace(/\s/g, '').replace(/^00228/, '+228').replace(/^228/, '+228');
-  if (!str.startsWith('+')) return `+228${str}`;
+  const str = String(val).replace(/\s/g, '').replace(/^00229/, '+229').replace(/^229/, '+229');
+  if (!str.startsWith('+')) return `+229${str}`;
   return str;
 };
 

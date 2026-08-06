@@ -128,7 +128,7 @@ const CreateSchoolModal: React.FC<CreateSchoolModalProps> = ({ onClose, onCreate
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Nom de l'établissement *</label>
                 <input type="text" value={form.name} onChange={e => handleNameChange(e.target.value)}
                   className="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="ex: Lycée Excellence Lomé" required />
+                  placeholder="ex: Lycée Excellence Cotonou" required />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Slug URL *</label>
@@ -136,26 +136,26 @@ const CreateSchoolModal: React.FC<CreateSchoolModalProps> = ({ onClose, onCreate
                   <span className="px-3 text-slate-500 text-sm">/</span>
                   <input type="text" value={form.slug} onChange={e => setForm(f => ({ ...f, slug: e.target.value }))}
                     className="flex-1 bg-transparent px-2 py-2.5 text-white placeholder-slate-500 focus:outline-none"
-                    placeholder="lycee-excellence-lome" required />
+                    placeholder="lycee-excellence-cotonou" required />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Adresse</label>
                 <input type="text" value={form.address} onChange={e => setForm(f => ({ ...f, address: e.target.value }))}
                   className="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Adressez à Lomé" />
+                  placeholder="Adresse à Cotonou" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Téléphone</label>
                 <input type="text" value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   className="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="+228 XX XX XX XX" />
+                  placeholder="+229 XX XX XX XX" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
                 <input type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   className="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="contact@ecole.tg" />
+                  placeholder="contact@ecole.bj" />
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ const CreateSchoolModal: React.FC<CreateSchoolModalProps> = ({ onClose, onCreate
 
           {/* Section Confidentialité et Consentement */}
           <div className="border-t border-slate-700 pt-6">
-            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Confidentialité & Protection des données (loi togolaise)</h3>
+            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Confidentialité & Protection des données (loi béninoise - APDP)</h3>
             <div className="space-y-4">
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
