@@ -209,7 +209,7 @@ export const Parametres: React.FC = () => {
                             className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
                             value={localYear}
                             onChange={(e) => setLocalYear(e.target.value)}
-                            placeholder="Ex : 2024-2025"
+                            placeholder="Ex : 2026-2027"
                         />
                     </div>
                 </div>
