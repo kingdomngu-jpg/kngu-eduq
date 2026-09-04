@@ -45,7 +45,7 @@ export async function syncToBackend(store: Partial<AppState>, replace: boolean =
     } = store;
     
     // Si l'un des paramètres de configuration est fourni, on envoie appSettings
-    if (appName !== undefined || schoolName !== undefined || schoolLogo !== undefined || schoolStamp !== undefined || cycleSchedules !== undefined || tranches !== undefined) {
+    if (appName !== undefined || schoolName !== undefined || schoolYear !== undefined || messageRemerciement !== undefined || messageRappel !== undefined || schoolLogo !== undefined || schoolStamp !== undefined || cycleSchedules !== undefined || tranches !== undefined) {
         payload.appSettings = {
             appName,
             schoolName,

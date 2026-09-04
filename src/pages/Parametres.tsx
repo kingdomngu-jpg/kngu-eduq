@@ -183,11 +183,11 @@ export const Parametres: React.FC = () => {
                             Nom de l'application
                         </label>
                         <input
-                            disabled={user?.role !== 'directeur' && user?.role !== 'comptable'}
+                            disabled={user?.role !== 'directeur' && user?.role !== 'comptable' && user?.role !== 'admin' && user?.role !== 'directeur_general' && user?.role !== 'superadmin'}
                             className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all disabled:opacity-60"
                             value={localAppName}
                             onChange={(e) => setLocalAppName(e.target.value)}
-                            placeholder="Ex : EduFinance"
+                            placeholder="Ex : Portail Éducation"
                         />
                     </div>
                     <div>
@@ -296,7 +296,7 @@ export const Parametres: React.FC = () => {
                     </div>
                 </div>
 
-                {(user?.role === 'directeur' || user?.role === 'comptable') && (
+                {(user?.role === 'directeur' || user?.role === 'comptable' || user?.role === 'admin' || user?.role === 'directeur_general' || user?.role === 'superadmin') && (
                     <div className="flex justify-end pt-4">
                         <button
                         type="submit"

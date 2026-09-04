@@ -615,7 +615,14 @@ export const useStore = create<AppState>()(
 
       updateAllSettings: async (newSettings) => {
         console.log('💾 [Store] Saving all settings to cloud...', Object.keys(newSettings));
-        set(newSettings);
+        set((state) => ({
+          ...newSettings,
+          settings: {
+            ...state.settings,
+            ...(newSettings.schoolYear ? { schoolYear: newSettings.schoolYear, anneScolaire: newSettings.schoolYear } : {}),
+            ...(newSettings.schoolName ? { schoolName: newSettings.schoolName, nomEcole: newSettings.schoolName } : {}),
+          }
+        }));
         try {
           const { syncToBackend } = await import('../services/backendSync');
           const result = await syncToBackend(newSettings);
